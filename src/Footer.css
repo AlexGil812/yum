@@ -1,0 +1,139 @@
+.site-footer {
+  background-color: #f3f3f3;
+  padding: 40px 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  font-size: 1.1em;
+  margin-top: 20px;
+  width: 1500px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-nav, .social-links, .email-signup {
+  margin-bottom: 20px;
+}
+
+.footer-links, .social-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li, .social-links a {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.footer-links a, .social-links a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover, .social-links a:hover {
+  color: #007bff;
+}
+
+.email-signup {
+  text-align: center;
+}
+
+.email-signup h3 {
+  margin-bottom: 15px;
+}
+
+.signup-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.signup-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-form button:hover {
+  background-color: #0056b3;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.social-links a:last-child {
+  margin-right: 0;
+}
+
+.fa-facebook-f:before {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="%23333" d="M279.14 288l14.22-92.66h-88.91V142c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H23.89V288h80.39v224h100.17V288z"/></svg>');
+}
+
+.fa-instagram:before {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="%23333" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-24.3-94.9-14.5-27.3-34.8-48.6-60.1-63.2-25.4-14.7-56.2-22-94.1-23.7-37.8-1.7-75.5-1.7-113.3 0-37.9 1.7-68.7 9-94.1 23.7-25.3 14.7-45.6 35.9-60.1 63.2-14.5 27.2-22.6 59-24.3 94.9-1.7 37.8-1.7 75.6 0 113.3 1.7 35.9 9.9 67.7 24.3 94.9 14.5 27.3 34.8 48.6 60.1 63.2 25.4 14.7 56.2 22 94.1 23.7 37.8 1.7 75.5 1.7 113.3 0 37.9-1.7 68.7-9 94.1-23.7 25.3-14.7 45.6-35.9 60.1-63.2 14.5-27.2 22.6-59 24.3-94.9 1.7-37.7 1.8-75.5.1-113.3zM224.1 338c-45.4 0-82.1-36.7-82.1-82.1s36.7-82.1 82.1-82.1 82.1 36.7 82.1 82.1-36.7 82.1-82.1 82.1zm146.4-123.3c-24.5 0-44.5-20-44.5-44.5s20-44.5 44.5-44.5 44.5 20 44.5 44.5-20 44.5-44.5 44.5z"/></svg>');
+}
+
+
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 20px 0;
+    width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-nav, .email-signup, .social-links {
+    width: 100%; 
+    text-align: center;
+    margin-bottom: 20px; /* Adds spacing between elements */
+  }
+
+  .signup-form {
+    flex-direction: column;
+  }
+
+  .signup-form input {
+    width: 100%; /* Make input fields take full width */
+    margin-bottom: 10px;  
+    padding: 10px; /* Increase padding for easier tapping */
+    box-sizing: border-box; /* Ensure padding is included within the width  */
+  }
+
+  .signup-form button { /* Assuming you have a button in the form */
+    width: 100%; 
+    padding: 15px; /* More padding for easier tapping */
+  }
+}
