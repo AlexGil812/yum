@@ -1,0 +1,29 @@
+.cart-container {
+    width: 80%; 
+    margin: 20px auto; 
+    padding: 20px;
+    border: 1px solid lightgray; 
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 15px;
+    border-bottom: 1px solid lightgray; 
+    padding-bottom: 10px; 
+  }
+  
+  button {
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
