@@ -1,19 +1,24 @@
-import React from 'react';
-import '../Footer.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "../Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="site-footer">
       <div className="footer-content">
-
         <div className="footer-nav">
           <ul className="footer-links">
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/menu">Menu</Link></li>
-            <li><Link to="#">Contact</Link></li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/menu">Menu</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
           </ul>
         </div>
 
@@ -26,16 +31,23 @@ const Footer = () => {
         </div>
 
         <div className="social-links">
-          <a href="https://facebook.com/yourbakery" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://facebook.com/yourbakery"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="https://instagram.com/yourbakery" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://instagram.com/yourbakery"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fab fa-instagram"></i>
           </a>
         </div>
 
         <p className="copyright">&copy; {currentYear} Pastry Patele</p>
-
       </div>
     </footer>
   );

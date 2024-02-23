@@ -1,28 +1,58 @@
 import React from "react";
-import  '../Contact.css';
-
-  
+import "../Contact.css";
+import { Formik, Form, Field } from "formik";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
-return (
-<div class="container">
-<h2>Contact Us</h2>
-<form id="contact-form" action="#" method="post"> 
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-    </div>
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-    </div>
-    <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-    </div>
-    <button type="submit">Send Message</button>
-</form>
-</div>
+  const navigate = useNavigate();
 
-)
+  const Home = () => {
+    navigate("/");
+  };
+
+  return (
+    <>
+      <button className="back-to-home" onClick={Home}>
+        <FontAwesomeIcon icon={faArrowLeft} />
+      </button>
+
+      <div className="container">
+        <h2>Contact Us</h2>
+        <Formik
+          initialValues={{
+            name: "",
+            email: "",
+            message: "",
+          }}
+          onSubmit={(values, { setSubmitting }) => {
+            console.log("Form submitted:", values);
+            setSubmitting(false);
+          }}
+        >
+          {({ isSubmitting }) => (
+            <Form id="contact-form">
+              <div className="form-group">
+                <label type="name">Name:</label>
+                <Field type="text" id="name" name="name" required />
+              </div>
+              <div className="form-group">
+                <label type="email">Email:</label>
+                <Field type="email" id="email" name="email" required />
+              </div>
+              <div className="form-group">
+                <label type="message">Message:</label>
+                <Field as="textarea" id="message" name="message" required />
+              </div>
+              <button type="submit" disabled={isSubmitting}>
+                Send Message
+              </button>
+            </Form>
+          )}
+        </Formik>
+      </div>
+    </>
+  );
 }

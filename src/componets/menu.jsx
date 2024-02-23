@@ -21,6 +21,10 @@ import ImageSeventeen from "../images/Gemini_Generated_Image_eighteen.jpeg";
 import ImageEighteen from "../images/Gemini_Generated_Image_nineteen.jpeg";
 import ImageNineteen from "../images/Gemini_Generated_Image_twenty.jpeg";
 import ImageTwenty from "../images/Gemini_Generated_Image_twentyone.jpeg";
+import ImageTwentyOne from "../images/cupcake.jpeg";
+import ImageTwentyTwo from "../images/flan.jpeg";
+import ImageTwentyThree from "../images/pie.jpeg";
+import ImageTwentyFour from "../images/turnovers.jpeg";
 import { useNavigate } from "react-router-dom";
 import useCartStore from "../store.js/store";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -168,6 +172,34 @@ export const menuItems = [
     description: "Flatbread with herbs and olive oil",
     price: 4.34,
     image: ImageTwenty,
+  },
+  {
+    id: 21,
+    name: "Cupcakes",
+    description: "Personal-sized cakes with frosting and sprinkles",
+    price: 4.34,
+    image: ImageTwentyOne,
+  },
+  {
+    id: 22,
+    name: "Flan",
+    description: "Creamy custard with caramel sauce",
+    price: 4.34,
+    image: ImageTwentyTwo,
+  },
+  {
+    id: 23,
+    name: "pie",
+    description: "Fruit-filled pie with a flaky crust",
+    price: 4.34,
+    image: ImageTwentyThree,
+  },
+  {
+    id: 24,
+    name: "turnovers",
+    description: "Flaky pastry filled with fruit or savory fillings",
+    price: 4.34,
+    image: ImageTwentyFour,
   },
 ];
 
