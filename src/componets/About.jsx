@@ -1,11 +1,24 @@
 
 import "../About.css";
-import { useRef } from "react";
-import { useEffect } from "react";
-import Bakery from "../images/bakery.jpeg";
-import InsideBakery from "../images/inside_bake.jpeg";
+import { useRef, useEffect } from "react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 const AboutMePage = () => {
   const imageContainerRef = useRef(null);
+  const navigate = useNavigate();
+  const [loaded, setLoaded] = useState(false);
+
+
+  const handleClick = () => {
+    navigate("/");
+  }
+
+  useEffect(() => {
+    setLoaded(true);
+  } , []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,8 +26,8 @@ const AboutMePage = () => {
       if (!imageContainer) return;
 
       const scrollPosition = window.scrollY;
-      const fadeStart = 100; // When the fade starts
-      const fadeDistance = 200; // How long the fade lasts
+      const fadeStart = 100; 
+      const fadeDistance = 200; 
 
       const opacity = Math.max(
         0,
@@ -28,25 +41,25 @@ const AboutMePage = () => {
   }, []);
 
   return (
-    <section id="about-me">
-      <div className="content">
-        <h2>Pastry Bakery</h2>
-        <p>About us ...</p>
-      </div>
-      <div className="image-container" ref={imageContainerRef}>
-        <img src={Bakery} alt="store" />
-      </div>
+    <>
+     <button 
+       className="back-to-home" 
+  onClick={handleClick} 
+>
+  <FontAwesomeIcon icon={faArrowLeft} />
+</button>
 
-      <section className="image-container-one" ref={imageContainerRef}>
-        <h2>Our Story</h2>
-        <img src={InsideBakery} alt="inside store" />
-        <p>
-          In the heart of 2015, our bakery was born from a lifelong passion for
-          creating sweet delights. What started as a small, family-run shop has
-          blossomed into a beloved community hub...
-        </p>
-      </section>
+<section id="about-me" className={loaded ? 'loaded' : ''}>
+       
+      <div className="grid-container">
+        <figure className="grid-item">
+       <Link to='/more-page' className="more">
+       <button>About us</button>
+       </Link>
+        </figure>
+      </div>
     </section>
+    </>
   );
 };
 
